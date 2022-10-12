@@ -1,3 +1,48 @@
+header {
+  width: 50%;
+  margin: 5% auto;
+}
+header img {
+  max-height: 100%;
+  max-width: 100%;
+}
 
+nav {
+  background: #F7F7F7;
+  margin: auto;
+}
+nav #loc {
+  width: 50%;
+  margin: 5% auto;
+}
+nav #loc input {
+  border: none;
+}
+nav h1 {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+nav p {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+}
+nav a div {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 20px;
+  height: 40px;
+  width: 60%;
+  margin: auto;
+}
+nav a div p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 /*# sourceMappingURL=style.css.map */
