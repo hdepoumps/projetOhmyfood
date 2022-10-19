@@ -1,0 +1,46 @@
+#Fonctionnement{
+  margin-left: 5%;
+  margin-right: 5% ;
+  .card{
+    background: $colour-bg;
+    height: 100px;
+    display: flex;
+    justify-content: left;
+    margin-top: auto;
+    margin-bottom: 15px;
+
+    >*{
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .num{
+      background-color: $colour-primary;
+      width: 30px;
+      border-radius: 15px;
+      height: 25px;
+      padding-top: 5px;
+      text-align: center;
+      margin-left: -15px;
+      margin-bottom: -5px;
+      color: white;
+    }
+    i{
+      padding-top: 17px;
+    }
+  }
+  .last{
+     i {
+       color: $colour-primary;
+     }
+     background: lighten($colour-primary , 35%);
+   }
+}
+
+
+.card{
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
