@@ -5,10 +5,10 @@
 }
 #fonctionnement{
   margin-left: 5%;
-  margin-right: 5% ;
+  margin-right: 0 ;
   .card{
     background: $colour-bg;
-    height: 100px;
+    height: 85px;
     margin-top: auto;
     margin-bottom: 15px;
     &--main{
@@ -45,6 +45,7 @@
 #restaurants{
   background: $colour-bg;
   h1{
+    padding-top: 50px;
     margin-left: 5%;
   }
   .card{
@@ -53,10 +54,11 @@
     background-color: white;
     box-shadow: 0 0 20px #c2c2c2;
     margin-bottom: 20px;
+    position: relative;
     &--img{
       position: relative;
       overflow: hidden;
-      height: 200px;
+      height: 210px;
       border-top-left-radius:20px;
       border-top-right-radius:20px;
       img{
@@ -68,6 +70,46 @@
         left: 50%;
         transform: translate(-50%, -50%);
       }
+    }
+    &--main{
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      padding-left: 5%;
+      padding-right: 5%;
+      &--fav{
+        height: 20px;
+        width: 20px;
+        position: relative;
+        transform: translateY(100%);
+        .fa-solid{
+          display: none;
+        }
+        &:hover{
+          .fa-solid{
+            display: initial;
+            background: -webkit-linear-gradient($colour-secondary, $colour-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          .fa-regular{
+            display: none;
+          }
+        }
+      }
+    }
+    &--new p{
+      z-index: 10;
+      margin-right: 5%;
+      margin-top: 5%;
+      padding: 2% 3%;
+      border-radius: 3px;
+      top: 0;
+      right: 0;
+      position: absolute;
+      text-align: right;
+      background: $colour-tertiary;
+      color: darken($colour-tertiary,40%);
     }
   }
 }
