@@ -1,0 +1,74 @@
+main{
+  #imgPrincpale{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .card--Menu{
+    padding-left: 5%;
+    padding-right: 5%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin-top: -25px;
+    background: #F7F7F7;
+    .entete{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .fav{
+        padding-right: 3%;
+        font-size: 30px;
+      }
+    }
+    .souligner{
+      border-bottom: solid $colour-tertiary 3px;
+      padding-bottom: 5px ;
+    }
+    .card{
+      background: white;
+      padding-left: 5%;
+      padding-right: 0;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      .plat{
+        padding-bottom: 18px;
+        padding-top: 18px;
+        p{
+          margin: 0;
+        }
+      }
+      .prix{
+        padding-bottom: 18px;
+        p{
+          margin: 0;
+        }
+      }
+      .ajouter{
+        display: initial;
+        background: $colour-tertiary;
+        height: 86px;
+        width: 50px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        i{
+          margin-right: auto;
+          margin-left: auto;
+          color: white;
+
+        }
+      }
+      &:hover{
+        .ajouter{
+          display: initial;
+          background: $colour-tertiary;
+          height: 100%;
+          i{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

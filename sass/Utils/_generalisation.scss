@@ -1,0 +1,32 @@
+main{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.card{
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
+.strong{
+  font-weight: bold ;
+}
+.lien{
+  color: unset;
+  text-decoration: none;
+}
+.fav{
+  .fa-solid {
+    display: none;
+  }
+  &:hover {
+    .fa-solid {
+      display: initial;
+      background: -webkit-linear-gradient($colour-secondary, $colour-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .fa-regular {
+      display: none;
+    }
+  }
+}

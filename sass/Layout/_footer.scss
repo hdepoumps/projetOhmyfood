@@ -1,0 +1,27 @@
+footer{
+  background: #353535;
+  color: white;
+  padding-left: 5%;
+  padding-top: 30px;
+  height: 220px;
+  margin-bottom: 0;
+  img{
+    filter: invert(1);
+    max-height: 28%;
+    max-width: 28%;
+    padding-bottom: 20px;
+  }
+  div{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 30px;
+    i{
+      width: 30px;
+    }
+  }
+  p{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}

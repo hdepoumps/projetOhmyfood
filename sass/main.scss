@@ -1,9 +1,14 @@
 @import "./Utils/variables";
+@import "./Utils/generalisation";
 
 @import "./Layout/body";
 @import "./Layout/header";
 @import "./Layout/nav";
+@import "./Layout/footer";
 
 @import "./Composants/body";
 
 @import "./Pages/mainPage";
+@import "./Pages/laPaletteDuGout";
+
+@import "./base/typography";

@@ -1,3 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
+main {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card {
+  width: 90%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.lien {
+  color: unset;
+  text-decoration: none;
+}
+
+.fav .fa-solid {
+  display: none;
+}
+.fav:hover .fa-solid {
+  display: initial;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fav:hover .fa-regular {
+  display: none;
+}
+
 body {
   margin-top: 0;
   padding: 0;
@@ -8,14 +42,19 @@ header {
   box-shadow: 0 0 10px #737373;
   height: 75px;
   margin-bottom: 0;
-  margin-top: auto;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 header div {
   width: 50%;
   margin: 5% auto;
   height: 35px;
-  position: relative;
-  top: 50%;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  right: 20%;
   transform: translateY(-50%);
 }
 header div img {
@@ -24,6 +63,12 @@ header div img {
   margin-right: auto;
   max-height: 100%;
   max-width: 100%;
+}
+header i {
+  position: absolute;
+  padding-left: 5%;
+  padding-right: -5%;
+  font-size: 25px;
 }
 
 nav {
@@ -78,14 +123,36 @@ nav a div p {
   transform: translateY(-50%);
 }
 
-body {
-  margin: 0;
+footer {
+  background: #353535;
+  color: white;
+  padding-left: 5%;
+  padding-top: 30px;
+  height: 220px;
+  margin-bottom: 0;
+}
+footer img {
+  filter: invert(1);
+  max-height: 28%;
+  max-width: 28%;
+  padding-bottom: 20px;
+}
+footer div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 30px;
+}
+footer div i {
+  width: 30px;
+}
+footer p {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
-.card {
-  width: 90%;
-  margin: auto;
-  border-radius: 20px;
+body {
+  margin: 0;
 }
 
 #fonctionnement {
@@ -163,25 +230,16 @@ body {
   align-content: center;
   justify-content: space-between;
   padding-left: 5%;
-  padding-right: 5%;
+  padding-right: 8%;
 }
-#restaurants .card--main--fav {
+#restaurants .card--main .fav {
   height: 20px;
   width: 20px;
   position: relative;
-  transform: translateY(100%);
+  transform: translateY(150%);
 }
-#restaurants .card--main--fav .fa-solid {
-  display: none;
-}
-#restaurants .card--main--fav:hover .fa-solid {
-  display: initial;
-  background: -webkit-linear-gradient(#FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-#restaurants .card--main--fav:hover .fa-regular {
-  display: none;
+#restaurants .card--main .fav .fa-heart {
+  font-size: 28px;
 }
 #restaurants .card--new p {
   z-index: 10;
@@ -195,6 +253,103 @@ body {
   text-align: right;
   background: #99E2D0;
   color: #278870;
+}
+
+main #imgPrincpale {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+main .card--Menu {
+  padding-left: 5%;
+  padding-right: 5%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: -25px;
+  background: #F7F7F7;
+}
+main .card--Menu .entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .card--Menu .entete .fav {
+  padding-right: 3%;
+  font-size: 30px;
+}
+main .card--Menu .souligner {
+  border-bottom: solid #99E2D0 3px;
+  padding-bottom: 5px;
+}
+main .card--Menu .card {
+  background: white;
+  padding-left: 5%;
+  padding-right: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+main .card--Menu .card .plat {
+  padding-bottom: 18px;
+  padding-top: 18px;
+}
+main .card--Menu .card .plat p {
+  margin: 0;
+}
+main .card--Menu .card .prix {
+  padding-bottom: 18px;
+}
+main .card--Menu .card .prix p {
+  margin: 0;
+}
+main .card--Menu .card .ajouter {
+  display: initial;
+  background: #99E2D0;
+  height: 86px;
+  width: 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+main .card--Menu .card .ajouter i {
+  margin-right: auto;
+  margin-left: auto;
+  color: white;
+}
+main .card--Menu .card:hover .ajouter {
+  display: initial;
+  background: #99E2D0;
+  height: 100%;
+}
+main .card--Menu .card:hover .ajouter i {
+  color: white;
+}
+
+h1, h2, p {
+  font-family: "Roboto", sans-serif;
+}
+
+.strong {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.titre {
+  font-family: "Shrikhand", cursive;
+}
+
+.EPD {
+  font-size: 20px;
+}
+
+.grand {
+  font-size: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */
