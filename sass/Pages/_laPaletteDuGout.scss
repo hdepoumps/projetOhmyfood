@@ -3,14 +3,18 @@ main{
     width: 100%;
     height: 300px;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
   }
   .card--Menu{
     padding-left: 5%;
     padding-right: 5%;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    margin-top: -25px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
     background: #F7F7F7;
+    z-index: 10;
+    position: relative;
     .entete{
       display: flex;
       align-items: center;
@@ -27,48 +31,84 @@ main{
     }
     .card{
       background: white;
-      padding-left: 5%;
+      padding-left: 0;
       padding-right: 0;
       display: flex;
       align-items: end;
       justify-content: space-between;
+
       .plat{
+        padding-left: 5%;
         padding-bottom: 18px;
         padding-top: 18px;
+        min-width: 0;
         p{
           margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
       .prix{
         padding-bottom: 18px;
+        padding-right: 5%;
+        margin-left: auto;
         p{
           margin: 0;
         }
       }
+      overflow: hidden;
       .ajouter{
-        display: initial;
         background: $colour-tertiary;
         height: 86px;
-        width: 50px;
-        border-top-right-radius: 20px;
-        border-bottom-right-radius: 20px;
+        width: 40px;
+        padding-right: 0;
+        margin-right: -40px;
+        display: flex;
+        align-items: center;
+        transition: margin-right 0.5s,width 0.5s;
         i{
-          margin-right: auto;
-          margin-left: auto;
+          transform: rotate(0turn);
+          display: flex;
+          justify-content: center;
+          width: 70px;
+          height: 25px ;
           color: white;
+          font-size: 25px;
 
         }
       }
       &:hover{
         .ajouter{
-          display: initial;
           background: $colour-tertiary;
-          height: 100%;
+          height: 86px;
+          width: 70px;
+          padding-right: 0;
+          margin-right: 0;
+          display: flex;
+          align-items: center;
           i{
+            display: flex;
+            justify-content: center;
+            width: 70px;
+            height: 25px ;
             color: white;
+            font-size: 25px;
+            animation-duration: 0.5s;
+            animation-name: tourner;
           }
         }
+
       }
     }
   }
+}
+@keyframes tourner {
+  0%{
+    transform: rotate(0turn);
+  }
+  100%{
+    transform: rotate(1turn);
+  }
+
 }

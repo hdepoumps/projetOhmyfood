@@ -14,7 +14,7 @@ main {
   font-weight: bold;
 }
 
-.lien {
+a {
   color: unset;
   text-decoration: none;
 }
@@ -49,22 +49,17 @@ header {
 }
 header div {
   width: 50%;
-  margin: 5% auto;
   height: 35px;
-  position: absolute;
-  top: 25%;
-  left: 20%;
-  right: 20%;
-  transform: translateY(-50%);
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
 }
 header div img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   max-height: 100%;
   max-width: 100%;
 }
-header i {
+header a {
   position: absolute;
   padding-left: 5%;
   padding-right: -5%;
@@ -259,14 +254,18 @@ main #imgPrincpale {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 main .card--Menu {
   padding-left: 5%;
   padding-right: 5%;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  margin-top: -25px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -40px;
   background: #F7F7F7;
+  z-index: 10;
+  position: relative;
 }
 main .card--Menu .entete {
   display: flex;
@@ -283,47 +282,80 @@ main .card--Menu .souligner {
 }
 main .card--Menu .card {
   background: white;
-  padding-left: 5%;
+  padding-left: 0;
   padding-right: 0;
   display: flex;
   align-items: end;
   justify-content: space-between;
+  overflow: hidden;
 }
 main .card--Menu .card .plat {
+  padding-left: 5%;
   padding-bottom: 18px;
   padding-top: 18px;
+  min-width: 0;
 }
 main .card--Menu .card .plat p {
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .card--Menu .card .prix {
   padding-bottom: 18px;
+  padding-right: 5%;
+  margin-left: auto;
 }
 main .card--Menu .card .prix p {
   margin: 0;
 }
 main .card--Menu .card .ajouter {
-  display: initial;
   background: #99E2D0;
   height: 86px;
-  width: 50px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  width: 40px;
+  padding-right: 0;
+  margin-right: -40px;
+  display: flex;
+  align-items: center;
+  transition: margin-right 0.5s, width 0.5s;
 }
 main .card--Menu .card .ajouter i {
-  margin-right: auto;
-  margin-left: auto;
+  transform: rotate(0turn);
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 25px;
   color: white;
+  font-size: 25px;
 }
 main .card--Menu .card:hover .ajouter {
-  display: initial;
   background: #99E2D0;
-  height: 100%;
+  height: 86px;
+  width: 70px;
+  padding-right: 0;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
 }
 main .card--Menu .card:hover .ajouter i {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 25px;
   color: white;
+  font-size: 25px;
+  animation-duration: 0.5s;
+  animation-name: tourner;
 }
 
+@keyframes tourner {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
 h1, h2, p {
   font-family: "Roboto", sans-serif;
 }
@@ -342,6 +374,7 @@ h1 {
 
 .titre {
   font-family: "Shrikhand", cursive;
+  font-size: 34px;
 }
 
 .EPD {
