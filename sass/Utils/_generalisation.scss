@@ -15,18 +15,30 @@ a{
   text-decoration: none;
 }
 .fav{
+  position: relative;
+  .fa-regular {
+    position: absolute;
+  }
   .fa-solid {
+    z-index: 1;
+    position: absolute;
     display: none;
   }
   &:hover {
     .fa-solid {
+      animation: apparitionCoeur 0.2s linear;
       display: initial;
       background: -webkit-linear-gradient($colour-secondary, $colour-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .fa-regular {
-      display: none;
-    }
+  }
+}
+@keyframes apparitionCoeur {
+  0%{
+    clip-path: circle(0%);
+  }
+  100%{
+    clip-path: circle(100%);
   }
 }

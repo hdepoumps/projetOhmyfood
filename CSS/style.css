@@ -19,22 +19,36 @@ a {
   text-decoration: none;
 }
 
+.fav {
+  position: relative;
+}
+.fav .fa-regular {
+  position: absolute;
+}
 .fav .fa-solid {
+  z-index: 1;
+  position: absolute;
   display: none;
 }
 .fav:hover .fa-solid {
+  animation: apparitionCoeur 0.2s linear;
   display: initial;
   background: -webkit-linear-gradient(#FF79DA, #9356DC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.fav:hover .fa-regular {
-  display: none;
-}
 
+@keyframes apparitionCoeur {
+  0% {
+    clip-path: circle(0%);
+  }
+  100% {
+    clip-path: circle(100%);
+  }
+}
 body {
-  margin-top: 0;
   padding: 0;
+  margin: 0;
 }
 
 header {
@@ -93,13 +107,17 @@ nav #loc input {
 }
 nav h1 {
   width: 60%;
-  margin: auto;
+  margin: 40px auto 20px;
   text-align: center;
 }
 nav p {
-  width: 70%;
-  margin: auto;
+  margin-bottom: 35px;
   text-align: center;
+}
+nav .marg70 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 nav a {
   text-decoration: none;
@@ -146,10 +164,56 @@ footer p {
   margin-bottom: 8px;
 }
 
-body {
-  margin: 0;
+.load {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: disparition 1s step-end forwards;
+}
+.load::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  overflow: hidden;
+  background: #F7F7F7;
+}
+.load::after {
+  box-sizing: border-box;
+  z-index: 10002;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  border: 3px solid white;
+  border-top: 3px solid #9356DC;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: custom-loading 1s linear infinite;
 }
 
+@keyframes custom-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disparition {
+  0% {
+    cursor: wait;
+    opacity: 1;
+  }
+  100% {
+    cursor: default;
+    opacity: 0;
+  }
+}
 #fonctionnement {
   margin-left: 5%;
   margin-right: 0;
@@ -163,7 +227,8 @@ body {
 #fonctionnement .card--main {
   display: flex;
   justify-content: start;
-  padding-top: 20px;
+  align-items: center;
+  padding-top: 0;
 }
 #fonctionnement .card--main > * {
   margin-right: 20px;
@@ -173,14 +238,20 @@ body {
   width: 30px;
   border-radius: 15px;
   height: 25px;
-  padding-top: 5px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
   text-align: center;
   margin-left: -15px;
-  margin-bottom: -5px;
+  margin-bottom: 0;
+  margin-top: 0;
   color: white;
 }
 #fonctionnement .card i {
-  padding-top: 17px;
+  padding-top: 0;
+}
+#fonctionnement .card p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 #fonctionnement .last {
   background: #f2eafb;
@@ -191,6 +262,7 @@ body {
 
 #restaurants {
   background: #F7F7F7;
+  padding-bottom: 20px;
 }
 #restaurants h1 {
   padding-top: 50px;
@@ -230,7 +302,6 @@ body {
 #restaurants .card--main .fav {
   height: 20px;
   width: 20px;
-  position: relative;
   transform: translateY(150%);
 }
 #restaurants .card--main .fav .fa-heart {
@@ -260,6 +331,7 @@ main #imgPrincpale {
 main .card--Menu {
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 20px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin-top: -40px;
@@ -273,21 +345,41 @@ main .card--Menu .entete {
   justify-content: space-between;
 }
 main .card--Menu .entete .fav {
-  padding-right: 3%;
+  margin-right: 5%;
   font-size: 30px;
+  margin-top: 0;
+  width: 30px;
+  height: 30px;
 }
 main .card--Menu .souligner {
   border-bottom: solid #99E2D0 3px;
   padding-bottom: 5px;
 }
 main .card--Menu .card {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
   background: white;
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
+  animation: apparitionMenu 0.5s both;
   overflow: hidden;
+}
+main .card--Menu .card--1 {
+  animation-delay: 0s;
+}
+main .card--Menu .card--2 {
+  animation-delay: 200ms;
+}
+main .card--Menu .card--3 {
+  animation-delay: 400ms;
+}
+main .card--Menu .card--4 {
+  animation-delay: 600ms;
 }
 main .card--Menu .card .plat {
   padding-left: 5%;
@@ -356,6 +448,16 @@ main .card--Menu .card:hover .ajouter i {
     transform: rotate(1turn);
   }
 }
+@keyframes apparitionMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 h1, h2, p {
   font-family: "Roboto", sans-serif;
 }
@@ -382,7 +484,7 @@ h1 {
 }
 
 .grand {
-  font-size: 23px;
+  font-size: 22px;
 }
 
 /*# sourceMappingURL=style.css.map */

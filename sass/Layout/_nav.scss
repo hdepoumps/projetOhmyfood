@@ -24,14 +24,18 @@ nav{
   }
   h1{
     width: 60%;
-    margin: auto;
+    margin: 40px auto 20px;
     text-align: center;
   }
   p{
-    width: 70% ;
-    margin: auto;
+    margin-bottom: 35px;
     text-align: center;
   }
+  .marg70{
+     width: 80%;
+     margin-left: auto;
+     margin-right: auto;
+   }
   a{
     text-decoration: none;
     color: white;
