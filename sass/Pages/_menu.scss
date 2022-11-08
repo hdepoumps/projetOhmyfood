@@ -9,7 +9,7 @@ main{
   .card--Menu{
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 20px;
+    padding-bottom: 20px ;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     margin-top: -40px;
@@ -88,7 +88,6 @@ main{
         align-items: center;
         transition: margin-right 0.5s,width 0.5s;
         i{
-          transform: rotate(0turn);
           display: flex;
           justify-content: center;
           width: 70px;
@@ -120,6 +119,11 @@ main{
         }
 
       }
+    }
+    .commander{
+      width: 50%;
+      margin-top: 30px;
+      margin-bottom: 10px ;
     }
   }
 }

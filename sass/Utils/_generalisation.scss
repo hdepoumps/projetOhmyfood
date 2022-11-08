@@ -34,6 +34,26 @@ a{
     }
   }
 }
+.bouton{
+  color: white;
+  div {
+    background: linear-gradient($colour-secondary, $colour-primary);
+    border-radius:  40px;
+    height: 60px ;
+    margin: auto;
+    box-shadow: 0 0 20px #c2c2c2;
+    transition: background 0.2s,box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover{
+    div{
+      background: linear-gradient(lighten($colour-secondary , 5%), lighten($colour-primary , 5%));
+      box-shadow: 0 0 20px #9b9b9b;
+    }
+  }
+}
 @keyframes apparitionCoeur {
   0%{
     clip-path: circle(0%);

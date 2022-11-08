@@ -38,6 +38,25 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.bouton {
+  color: white;
+}
+.bouton div {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 40px;
+  height: 60px;
+  margin: auto;
+  box-shadow: 0 0 20px #c2c2c2;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bouton:hover div {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 0 0 20px #9b9b9b;
+}
+
 @keyframes apparitionCoeur {
   0% {
     clip-path: circle(0%);
@@ -90,7 +109,7 @@ nav #loc {
   background: #efefef;
   width: 100%;
   height: 60px;
-  margin: 5% auto;
+  margin-bottom: 5%;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -119,21 +138,11 @@ nav .marg70 {
   margin-left: auto;
   margin-right: auto;
 }
-nav a {
-  text-decoration: none;
-  color: white;
-}
 nav a div {
-  background: linear-gradient(#FF79DA, #9356DC);
-  border-radius: 40px;
-  height: 60px;
   width: 60%;
-  margin: auto;
 }
 nav a div p {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  margin: 0;
 }
 
 footer {
@@ -165,24 +174,18 @@ footer p {
 }
 
 .load {
-  position: absolute;
+  position: sticky;
+  top: 50%;
   width: 100%;
-  height: 100%;
+  height: 50px;
+  content: "";
+  background: blue;
   z-index: 1;
   animation: disparition 1s step-end forwards;
 }
-.load::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10001;
+.load .spinner {
   overflow: hidden;
-  background: #F7F7F7;
-}
-.load::after {
   box-sizing: border-box;
-  z-index: 10002;
   content: "";
   position: absolute;
   top: 50%;
@@ -190,6 +193,7 @@ footer p {
   margin: -25px 0 0 -25px;
   border: 3px solid white;
   border-top: 3px solid #9356DC;
+  border-bottom: 3px solid #FF79DA;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -207,11 +211,11 @@ footer p {
 @keyframes disparition {
   0% {
     cursor: wait;
-    opacity: 1;
+    transform: scale(1);
   }
   100% {
     cursor: default;
-    opacity: 0;
+    transform: scale(0);
   }
 }
 #fonctionnement {
@@ -412,7 +416,6 @@ main .card--Menu .card .ajouter {
   transition: margin-right 0.5s, width 0.5s;
 }
 main .card--Menu .card .ajouter i {
-  transform: rotate(0turn);
   display: flex;
   justify-content: center;
   width: 70px;
@@ -438,6 +441,11 @@ main .card--Menu .card:hover .ajouter i {
   font-size: 25px;
   animation-duration: 0.5s;
   animation-name: tourner;
+}
+main .card--Menu .commander {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 @keyframes tourner {
