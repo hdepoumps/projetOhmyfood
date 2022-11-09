@@ -1,4 +1,4 @@
-main{
+main{ position: relative;
   #imgPrincpale{
     width: 100%;
     height: 300px;
@@ -22,7 +22,7 @@ main{
       justify-content: space-between;
 
       .fav{
-        margin-right: 5%;
+        margin-right: 0;
         font-size: 30px;
         margin-top: 0;
         width: 30px;
@@ -119,8 +119,12 @@ main{
 
       }
     }
+    .menubouton{
+      margin-left: calc(50% - 200px/2);
+      margin-right: calc(50% - 200px/2);
+    }
     .commander{
-      width: 50%;
+      width: 200px;
       margin-top: 30px;
       margin-bottom: 10px ;
     }
@@ -164,14 +168,22 @@ main{
 @media screen and (min-width: 992px) {
   main{
     #imgPrincpale{
+      position: absolute;
+      z-index: 0;
+      top: calc(40px - 300px);
+      height: calc(100% + 300px - 40px);
     }
     .card--Menu{
+      margin-top: calc(300px - 40px);
       max-width: 1400px;
+      width: 80%;
       margin-right: auto;
       margin-left: auto;
+      animation: menudesktop 2s both;
       .card{
         width: calc(100%/3 - 10px);
       }
     }
   }
 }
+

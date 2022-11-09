@@ -40,8 +40,8 @@ footer{
       justify-content: space-between;
       flex-wrap: wrap;
       img{
-        margin-left: 50%;
-        margin-right: 50%;
+        margin-left:  calc(50% - 120px/2);
+        margin-right: calc(50% - 120px/2);
       }
     }
   }

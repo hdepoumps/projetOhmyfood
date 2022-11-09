@@ -189,8 +189,8 @@ footer p {
     flex-wrap: wrap;
   }
   footer .foot img {
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-left: calc(50% - 60px);
+    margin-right: calc(50% - 60px);
   }
 }
 .load {
@@ -394,6 +394,9 @@ footer p {
     width: calc(33.3333333333% - 10px);
   }
 }
+main {
+  position: relative;
+}
 main #imgPrincpale {
   width: 100%;
   height: 300px;
@@ -418,7 +421,7 @@ main .card--Menu .entete {
   justify-content: space-between;
 }
 main .card--Menu .entete .fav {
-  margin-right: 5%;
+  margin-right: 0;
   font-size: 30px;
   margin-top: 0;
   width: 30px;
@@ -510,8 +513,12 @@ main .card--Menu .card:hover .ajouter i {
   animation-duration: 0.5s;
   animation-name: tourner;
 }
+main .card--Menu .menubouton {
+  margin-left: calc(50% - 100px);
+  margin-right: calc(50% - 100px);
+}
 main .card--Menu .commander {
-  width: 50%;
+  width: 200px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -551,10 +558,19 @@ main .card--Menu .commander {
   }
 }
 @media screen and (min-width: 992px) {
+  main #imgPrincpale {
+    position: absolute;
+    z-index: 0;
+    top: -260px;
+    height: calc(100% + 300px - 40px);
+  }
   main .card--Menu {
+    margin-top: 260px;
     max-width: 1400px;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
+    animation: menudesktop 2s both;
   }
   main .card--Menu .card {
     width: calc(33.3333333333% - 10px);
