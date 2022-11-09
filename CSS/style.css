@@ -5,7 +5,7 @@ main {
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   margin: auto;
   border-radius: 20px;
 }
@@ -73,9 +73,9 @@ body {
 header {
   width: 100%;
   box-shadow: 0 0 10px #737373;
+  clip-path: inset(0px 0px -10px 0px);
   height: 75px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   position: relative;
@@ -102,14 +102,13 @@ header a {
 nav {
   background: #F7F7F7;
   margin: 0;
-  padding-bottom: 5%;
-  height: 375px;
+  padding-bottom: 30px;
 }
 nav #loc {
   background: #efefef;
   width: 100%;
   height: 60px;
-  margin-bottom: 5%;
+  margin-bottom: 30px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -121,8 +120,9 @@ nav #loc i {
 nav #loc input {
   background: none;
   border: none;
-  width: auto;
   text-align: center;
+  width: 50%;
+  max-width: 694px;
 }
 nav h1 {
   width: 60%;
@@ -139,7 +139,7 @@ nav .marg70 {
   margin-right: auto;
 }
 nav a div {
-  width: 60%;
+  width: 250px;
 }
 nav a div p {
   margin: 0;
@@ -148,24 +148,26 @@ nav a div p {
 footer {
   background: #353535;
   color: white;
-  padding-left: 5%;
   padding-top: 30px;
   height: 220px;
   margin-bottom: 0;
 }
+footer .foot {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 footer img {
   filter: invert(1);
-  max-height: 28%;
-  max-width: 28%;
+  width: 120px;
   padding-bottom: 20px;
 }
-footer div {
+footer .basdepage {
   display: flex;
   justify-content: left;
   align-items: center;
   height: 30px;
 }
-footer div i {
+footer .basdepage i {
   width: 30px;
 }
 footer p {
@@ -173,14 +175,32 @@ footer p {
   margin-bottom: 8px;
 }
 
+@media screen and (min-width: 992px) {
+  footer {
+    height: 100px;
+  }
+  footer .foot {
+    max-width: 1400px;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  footer .foot img {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+}
 .load {
-  position: sticky;
-  top: 50%;
+  position: fixed;
+  top: 0;
   width: 100%;
-  height: 50px;
+  height: 100%;
   content: "";
-  background: blue;
-  z-index: 1;
+  background: #F7F7F7;
+  z-index: 11;
   animation: disparition 1s step-end forwards;
 }
 .load .spinner {
@@ -219,14 +239,18 @@ footer p {
   }
 }
 #fonctionnement {
-  margin-left: 5%;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 1400px;
 }
 #fonctionnement .card {
   background: #F7F7F7;
   height: 85px;
   margin-top: auto;
   margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
 }
 #fonctionnement .card--main {
   display: flex;
@@ -325,6 +349,51 @@ footer p {
   color: #278870;
 }
 
+@media screen and (min-width: 768px) {
+  #fonctionnement .num {
+    min-width: 30px;
+  }
+  #fonctionnement .etapes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  #fonctionnement .etapes .card {
+    width: calc(33.3333333333% - 20px);
+  }
+  #restaurantsListe {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  #restaurantsListe a {
+    margin: 0;
+    width: calc(50% - 15px);
+  }
+  #restaurantsListe a .card {
+    margin: 0 0 30px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #restaurants h1 {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  #restaurantsListe {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+  #restaurantsListe a {
+    width: calc(33.3333333333% - 10px);
+  }
+}
 main #imgPrincpale {
   width: 100%;
   height: 300px;
@@ -366,7 +435,6 @@ main .card--Menu .card {
   background: white;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -464,6 +532,32 @@ main .card--Menu .commander {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .card--Menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card--Menu .entete {
+    width: 100%;
+  }
+  .card--Menu .EPD {
+    width: 100%;
+  }
+  .card--Menu .card {
+    width: calc(50% - 10px);
+  }
+}
+@media screen and (min-width: 992px) {
+  main .card--Menu {
+    max-width: 1400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  main .card--Menu .card {
+    width: calc(33.3333333333% - 10px);
   }
 }
 h1, h2, p {

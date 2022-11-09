@@ -1,11 +1,15 @@
 #fonctionnement{
-  margin-left: 5%;
-  margin-right: 0 ;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 1400px;
   .card{
     background: $colour-bg;
     height: 85px;
     margin-top: auto;
     margin-bottom: 15px;
+    margin-left: 0;
+    margin-right: 0;
     &--main{
       display: flex;
       justify-content: start;
@@ -102,4 +106,54 @@
       color: darken($colour-tertiary,40%);
     }
   }
+}
+@media screen and (min-width: 768px) {
+  #fonctionnement{
+    .num{
+      min-width: 30px;
+    }
+    .etapes{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .card{
+        width: calc(100%/3 - 20px);
+      }
+    }
+  }
+  #restaurantsListe{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 5%;
+    margin-left: 5%;
+    a{
+      margin: 0;
+      width: calc(50% - 15px);
+      .card{
+        margin: 0 0 30px;
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  #restaurants{
+    h1{
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+  }
+  #restaurantsListe{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    a{
+      width: calc(100%/3 - 10px);
+    }
+  }
+
 }
