@@ -94,8 +94,8 @@ header div img {
 }
 header a {
   position: absolute;
-  padding-left: 5%;
-  padding-right: -5%;
+  margin-left: 5%;
+  margin-right: -5%;
   font-size: 25px;
 }
 
@@ -292,7 +292,7 @@ footer p {
   background: #F7F7F7;
   padding-bottom: 20px;
 }
-#restaurants h1 {
+#restaurants h2 {
   padding-top: 50px;
   margin-left: 5%;
 }
@@ -324,8 +324,8 @@ footer p {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 8%;
+  margin-left: 5%;
+  margin-right: 8%;
 }
 #restaurants .card--main .fav {
   height: 20px;
@@ -339,7 +339,7 @@ footer p {
   z-index: 10;
   margin-right: 5%;
   margin-top: 5%;
-  padding: 2% 3%;
+  padding: 10px 13px;
   border-radius: 3px;
   top: 0;
   right: 0;
@@ -378,7 +378,7 @@ footer p {
   }
 }
 @media screen and (min-width: 992px) {
-  #restaurants h1 {
+  #restaurants h2 {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -588,7 +588,7 @@ p {
   font-size: 18px;
 }
 
-h1 {
+h1, h2 {
   font-size: 28px;
 }
 
