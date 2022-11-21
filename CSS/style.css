@@ -81,7 +81,7 @@ header {
   position: relative;
 }
 header div {
-  width: 50%;
+  width: calc(50% - 22px);
   height: 35px;
   margin-right: auto;
   margin-left: auto;
